@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!doctype html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Web site created using create-react-app" />
-    <title>React App</title>
-    <script defer="defer" src="/viviansweets/static/js/main.3b8161db.js"></script>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript">
+
+        //wait for widget to be available
+        function widgetLoading() {
+            if (widget) {
+                executeInitWidget(widget);
+            } else {
+                setTimeout(widgetLoading, 100); //Wait for widget object to be added correctly
+            }
+        }
+        //
+        function executeInitWidget(wdg) {
+            // IMPORTANT: Due to the following line, make sure that when you set the source code
+            // URL when registering the widget in 3DEXPERIENCE you include a final "/" before any query args.
+            // for instance this is invalid https://victorious-hill.azurestaticapps.net?v=1
+            // while this is valid https://victorious-hill.azurestaticapps.net/?v=1
+            var uwaPath = wdg.uwaUrl.substring(0, wdg.uwaUrl.lastIndexOf("/") + 1);
+
+            try {
+                var scriptElement = document.createElement("script");
+                scriptElement.src = uwaPath + "static/js/main.3b8161db.js";
+                document.head.appendChild(scriptElement);
+
+            } catch (error) {
+                var pElement = document.createElement("p");
+                pElement.innerText = "An error occured while loading the widget. Please retry later.";
+                document.body.appendChild(pElement);
+            }
+        }
+        widgetLoading();
+    </script>
 </head>
 
 <body><noscript>You need to enable JavaScript to run this app.</noscript>
