@@ -26,7 +26,7 @@
             try {
                 var scriptElement = document.createElement("script");
                 scriptElement.src = uwaPath + "static/js/main.a748464a.js";
-                document.head.appendChild(scriptElement);
+                document.body.appendChild(scriptElement); // add after the root div
                 console.log("static/js/main.a748464a.js script js loaded");
 
             } catch (error) {
