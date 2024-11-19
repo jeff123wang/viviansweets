@@ -23,9 +23,10 @@
             // for instance this is invalid https://victorious-hill.azurestaticapps.net?v=1
             // while this is valid https://victorious-hill.azurestaticapps.net/?v=1
             var uwaPath = wdg.getUrl().substring(0, wdg.getUrl().lastIndexOf("/") + 1);
-
+            
             try {
                 var scriptElement = document.createElement("script");
+                console.log(scriptElement);
                 scriptElement.src = uwaPath + "static/js/main.a748464a.js";
                 document.body.appendChild(scriptElement); // add after the root div
                 console.log("static/js/main.a748464a.js script js loaded");
