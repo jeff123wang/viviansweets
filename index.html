@@ -11,7 +11,7 @@
         function widgetLoading() {
             if (widget) {
                 widget.addEvent("onLoad", function (eventName) {
-                      executeInitWidget(widget);
+                      //executeInitWidget(widget);
                  });                
             } else {
                 setTimeout(widgetLoading, 100); //Wait for widget object to be added correctly
@@ -40,6 +40,7 @@
         }
         widgetLoading();
     </script>
+    <script defer="" src="./static/js/main.a748464a.js"></script>
 </head>
 
 <body><noscript>You need to enable JavaScript to run this app.</noscript>
