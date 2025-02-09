@@ -1,3 +1,5 @@
 name: my jekyll website
 
 title: Vivian's Sweets
+
+baseurl: viviansweets
