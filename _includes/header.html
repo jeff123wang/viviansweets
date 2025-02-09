@@ -4,9 +4,9 @@
     </a>
     <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
     <nav id="nav-menu">
-        <a href="/about">About</a>
-        <a href="/menu">Menu/Online Order</a>
-        <a href="/gallery">Gallery</a>
+        <a href="{{ '/about' | relative_url }}">About</a>
+        <a href="{{ '/menu' | relative_url }}">Menu/Online Order</a>
+        <a href="{{ '/gallery' | relative_url }}">Gallery</a>
     </nav>
 </header>
 <script>
