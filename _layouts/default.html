@@ -1,3 +1,16 @@
-<p>Hello, this is my layout</p>
+<!DOCTYPE html>
+<html>
 
-{{content}}
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+    {% include header.html %}
+    <div class="main-content">
+        {{ content }}
+    </div>
+    {% include footer.html %}
+</body>
+
+</html>

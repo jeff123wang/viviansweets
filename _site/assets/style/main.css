@@ -1,0 +1,196 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #fddede;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    height: 50px;
+}
+
+* {
+    color: #e97cb3;
+}
+
+header nav a {
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+}
+
+.main-content img {
+    height: 300px;
+}
+
+/* Existing .main-content styles (modified): */
+.main-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* Ensure .main-content takes full width */
+    box-sizing: border-box;
+    /* Important for predictable width calculations */
+}
+
+
+.hero {
+    text-align: left;
+    margin-bottom: 30px;
+    width: 70%;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    font-family: cursive;
+}
+
+.hero p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1px;
+}
+
+.grid-item {
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.item2 {
+    grid-column: span 2;
+}
+
+/* New CSS for responsive header */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* Distributes items evenly with space around */
+    padding: 20px;
+    /* Consider removing this padding; .main-content already has padding */
+    width: 100%;
+    /* Ensure container takes full width */
+    max-width: 1200px;
+    /* optional: set max width to prevent stretching on very large screens */
+}
+
+.menu-item {
+    width: 22%;
+    /* Occupies about 22% of the container's width, accounting for some margin */
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    text-align: center;
+    /* Centers the text within each item */
+}
+
+.menu-item h2 {
+    margin-top: 0;
+    color: #e91e63;
+    /* Pink, same as original image */
+}
+
+.menu-item img {
+    height: 50px;
+}
+
+/* Example placeholder style (can be customized) */
+.placeholder {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 600px) {
+    .menu-icon {
+        display: block;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 5px 0 !important;
+        /* Add margin to create space between links */
+        padding: 10px;
+        background-color: #2c3e50;
+        border-radius: 5px;
+        border: 1px solid #e97cb3;
+        /* Add border to each link */
+    }
+
+    nav.active {
+        display: flex;
+        position: absolute;
+        top: 60px;
+        /* Adjust based on your header height */
+        left: 0;
+        width: 100%;
+        background-color: #fddede;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        /* Change to one column */
+        grid-template-rows: auto;
+        /* Adjust rows to auto */
+    }
+
+    .item2 {
+        grid-column: span 1;
+        /* Ensure it spans only one column */
+    }
+
+    .container {
+        flex-direction: column;
+        /* Stacks items vertically */
+    }
+
+    .menu-item {
+        width: 90%;
+        /* Items occupy almost full width on smaller screens */
+        margin-left: auto;
+        margin-right: auto;
+        /* Centers the items */
+    }
+
+    .main-content img {
+        width: 300px;
+        height: auto;
+    }
+}
