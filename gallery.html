@@ -1,8 +1,95 @@
 ---
-title: gallery
 layout: default
+title: Photo Gallery
+images:
+- /assets/img/Pecan-cake.png
+- /assets/img/strawberry-cheese-cake.jpg
+- /assets/img/birthday-cake.jpg
+- /assets/img/sugar-cookie.png
+- /assets/img/cupcakes-1.JPG
+- /assets/img/cupcakes-2.JPG
+- /assets/img/mint-cookie.jpg
 ---
 
+<<<<<<< HEAD
 gallery page
 
 gallery pace from remote
+=======
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        /* 12 Columns */
+        grid-template-rows: auto auto;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .grid-item {
+        background-color: #ddd;
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #ccc;
+    }
+
+    .grid-item img {
+        width: 100%;
+    }
+
+    /* Row 1: Each item spans 4 units */
+    .grid-container> :nth-child(1) {
+        grid-column: 1 / span 4;
+    }
+
+    .grid-container> :nth-child(2) {
+        grid-column: 5 / span 4;
+    }
+
+    .grid-container> :nth-child(3) {
+        grid-column: 9 / span 4;
+    }
+
+    /* Row 2: Each item spans 3 units */
+    .grid-container> :nth-child(4) {
+        grid-column: 1 / span 3;
+    }
+
+    .grid-container> :nth-child(5) {
+        grid-column: 4 / span 3;
+    }
+
+    .grid-container> :nth-child(6) {
+        grid-column: 7 / span 3;
+    }
+
+    .grid-container> :nth-child(7) {
+        grid-column: 10 / span 3;
+    }
+
+    @media (max-width: 600px) {
+        .grid-container {
+            grid-template-columns: 1fr;
+        }
+
+        .grid-container> :nth-child(1),
+        .grid-container> :nth-child(2),
+        .grid-container> :nth-child(3),
+        .grid-container> :nth-child(4),
+        .grid-container> :nth-child(5),
+        .grid-container> :nth-child(6),
+        .grid-container> :nth-child(7) {
+            grid-column: auto;
+        }
+    }
+</style>
+ 
+<div class="grid-container">
+    {% for image in page.images %}
+    {% assign image_name = image | split: '/' | last | split: '.' | first %}
+    <div class="grid-item">
+        <img src="{{ image | relative_url }}" alt="{{ image_name }}">
+    </div>
+    {% endfor %}
+</div>
+>>>>>>> eaf2b73 (added menu and gallery page)

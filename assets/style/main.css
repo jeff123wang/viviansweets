@@ -116,15 +116,40 @@ header nav a {
     height: 50px;
 }
 
-/* Example placeholder style (can be customized) */
-.placeholder {
-    background-color: #f2f2f2;
-    padding: 10px;
-    margin-bottom: 10px;
+#cart {
+    height: 50px;
+    border-radius: 10px;
+    font-size: large;
+}
+
+button:active {
+    transform: scale(1.5);
+    background-color: red;
 }
 
 
+.menu-list {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.menu-list p {
+    margin: 0 0 10px;
+}
+
+.menu-list ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.menu-list li {
+    margin-bottom: 5px;
+}
+
 @media (max-width: 600px) {
+
     .menu-icon {
         display: block;
     }
